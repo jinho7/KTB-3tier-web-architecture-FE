@@ -9,8 +9,8 @@ function App() {
   const fetchCount = async () => {
     try {
       const res = await fetch(`${API_BASE}/counter`);
-      const data = await res.json(); // int 단일 값이므로 json 아님 → text로!
-      const parsed = parseInt(await res.text());
+      const text = await res.text();
+      const parsed = parseInt(text);
       setCount(parsed);
     } catch (e) {
       alert('카운트를 불러오는 데 실패했습니다.');
